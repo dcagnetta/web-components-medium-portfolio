@@ -7,6 +7,11 @@ import { html, css, LitElement } from "lit";
 import { sharedStyles } from "../shared/style";
 import { styleMap } from "lit-html/directives/style-map.js";
 
+import '@brightspace-ui/core/components/meter/meter-circle.js';
+import '@brightspace-ui/core/components/meter/meter-linear.js';
+import '@brightspace-ui/core/components/meter/meter-radial.js';
+import '@brightspace-ui/core/components/status-indicator/status-indicator.js';
+
 const componentStyle = css`
   :host {
     max-width: 100%;
@@ -169,9 +174,9 @@ class MediumArticleCardComponent extends LitElement {
         </a>
         <div class="card-info">
           <div class="card-title">
-            <a target="_blank" href="${this.article.link}"
-              >${this.article.title}</a
-            >
+            <a target="_blank" href="${this.article.link}">
+                ${this.article.title}
+            </a>
           </div>
 
           <medium-category-chips
@@ -192,6 +197,10 @@ class MediumArticleCardComponent extends LitElement {
             >
           </div>
         </div>
+        
+         <d2l-status-indicator state="success" text="complete"></d2l-status-indicator>
+            <d2l-status-indicator state="alert" text="overdue"></d2l-status-indicator>
+
       </article>
     `;
   }

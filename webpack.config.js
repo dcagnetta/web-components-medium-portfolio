@@ -1,8 +1,11 @@
 const path = require("path");
 
+var mode = process.env.NODE_ENV || 'production';
+
 module.exports = {
   entry: "./src/main.ts",
-  mode: "production",
+  mode: mode,
+  devtool: (mode === 'development') ? 'inline-source-map' : false,
   module: {
     rules: [
       {
@@ -25,5 +28,5 @@ module.exports = {
   },
   resolve: {
     extensions: [".ts", ".js"],
-  },
+  }
 };

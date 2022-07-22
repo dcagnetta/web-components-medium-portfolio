@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack serve --open",
-    "build": "webpack"
+    "build": "webpack --config webpack.config.prod.js",
+    "start:dev": "webpack-dev-server --mode development --open"
   },
   "devDependencies": {
     "lit": "^2.0.0",
@@ -15,5 +16,8 @@
     "webpack": "^5.52.1",
     "webpack-cli": "^4.8.0",
     "webpack-dev-server": "^4.2.1"
+  },
+  "dependencies": {
+    "@brightspace-ui/core": "^2.35.0"
   }
 }
