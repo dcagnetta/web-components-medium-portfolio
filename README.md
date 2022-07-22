@@ -15,5 +15,15 @@
 [Live Demo](https://mariusbongarts.github.io/medium-portfolio-5/)
 
 
+ [ 'error:03000086:digital envelope routines::initialization error' ]
+> set NODE_OPTIONS=--openssl-legacy-provider
+
+> npm i
+
+> npm run build
+
+> npm run start
+
+
 
 
