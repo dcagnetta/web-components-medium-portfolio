@@ -1,6 +1,5 @@
 import { getRssFeed, RssFeed } from "./services/medium-feed";
-import "./components/medium-articles";
-import "./components/medium-header";
+import "./components/hello-world/hello-world.component";
 import { html, LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
@@ -72,16 +71,7 @@ class MediumPortfolio extends LitElement {
     return this.rssFeed
       ? html`
           <div id="medium-portfolio-app">
-            ${this.hideHeader
-              ? ""
-              : html`<medium-header
-                  title="${this.rssFeed.feed.title}"
-                  image="${this.rssFeed.feed.image}"
-                ></medium-header>`}
-
-            <medium-articles
-              .articles="${this.rssFeed.articles}"
-            ></medium-articles>
+            <hello-world></hello-world>
           </div>
         `
       : html``;

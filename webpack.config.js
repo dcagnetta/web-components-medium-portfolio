@@ -1,11 +1,8 @@
 const path = require("path");
 
-var mode = process.env.NODE_ENV || 'production';
-
 module.exports = {
   entry: "./src/main.ts",
-  mode: mode,
-  devtool: (mode === 'development') ? 'inline-source-map' : false,
+  mode: "production",
   module: {
     rules: [
       {
@@ -13,6 +10,13 @@ module.exports = {
         use: "ts-loader",
         exclude: /node_modules/,
       },
+      {
+        test: /.(scss|css)$/,
+        use: [
+          { loader: "lit-css-loader" },
+          { loader: "sass-loader" },
+        ],
+      }
     ],
   },
   devServer: {
@@ -28,5 +32,5 @@ module.exports = {
   },
   resolve: {
     extensions: [".ts", ".js"],
-  }
+  },
 };
